@@ -1,0 +1,14 @@
+<h1>All Galleries</h1>
+
+<ul id="galleries">
+  <% @galleries.each do |gallery| %>
+    <li>
+      <%= link_to gallery.title, gallery_path(gallery), class: 'gallery_link' %>
+    </li>
+    <br>
+  <% end %>
+</ul>
+
+
+
+<%= link_to "Create a New Gallery", new_gallery_path, class: "new_gallery_link" %>

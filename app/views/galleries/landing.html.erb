@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,500,100' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <style>
+    html, body {
+      margin: 0 30 0 30;
+      padding: 0;
+    }
+
+   
+    body {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 100;
+    }
+
+    .container {
+      margin: 0 auto;
+      width: 940px; 
+    }
+
+
+    /* Header */
+    .header {
+      height: 800px;
+      text-align: center; 
+      background: url(http://i.imgur.com/iqqREoR.jpg) no-repeat center center fixed; 
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+    }
+
+    .header .container {
+      position: relative;
+      top: 100px;
+    }
+
+    .header h1 {
+      font-family: 'Gill Sans';
+      text-transform: uppercase;
+      font-size: 120px;  
+      line-height: 100px; 
+      color: #fff;
+      margin-top: 0;
+      margin-bottom: 80px;
+    }
+
+    .header h4 {
+      line-height: 100px; 
+      text-transform: uppercase;
+      color: #fff;
+      margin-top: 0;
+      margin-bottom: 80px;
+    }
+
+    .title {
+      font-weight: normal;
+    }
+
+    .header p {
+      font-weight: 500;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 8px;
+      margin-bottom: 20px;
+      margin-top: 0;
+    }
+
+    .main a {
+      background-color: #000;
+      color: #fff;
+      letter-spacing: 1.3px;
+      padding: 16px 40px;
+      text-decoration: none;
+      border-style: none;
+      border-radius: 5px;
+    }
+
+
+    /* Main */
+    .main .container {
+      margin: 80px auto;
+    }
+
+    .main {
+      text-align: center;
+    }
+
+
+  </style>
+
+<title>Drone Photography</title>
+</head>
+<body>
+  <div class="header">
+    <div class="container">
+    <h4>Welcome to</h4>
+    <h1><span class="title">Point Of View</span></h1>
+      <p></p>
+    </div>
+  </div>
+
+  <div class="main">
+    <div class="container">
+      <p>Enter to see my Aerial Portfolio</p>
+      <br>
+      <br>
+      <%= link_to "Enter Here", galleries_path %>
+    </div>
+  </div>
+
+</body>
+</html>
