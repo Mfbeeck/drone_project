@@ -1,2 +1,8 @@
-<h1>Edit "<%=@gallery.title%>"</h1>
+<h1>Edit 
+<% if !@gallery.title.empty?%>
+"<%=@gallery.title%>"
+<%end%>
+Gallery
+</h1>
 <%= render partial: 'form' %>
+<%= link_to "<< Back to gallery", gallery_path(@gallery) %>

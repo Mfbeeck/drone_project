@@ -1,0 +1,32 @@
+<div class = "attachment_form">
+<%= form_for [ @attachment.gallery, @attachment ] do |f| %>
+  <p>
+    <%= f.label :title %><br/>
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :location %><br/>
+    <%= f.text_field :location %>
+  </p>
+  <p>
+    <%= f.label :about %><br/>
+    <%= f.text_area :about %>
+  </p>
+  <p class="video-upload">
+    <%= f.label :url, "Embedded URL (Vimeo)" %><br/>
+    <%= f.text_field :url %>
+  </p>
+  <p class="image-upload">
+  	<% if @attachment.image.exists? %>
+  	<%= image_tag @attachment.image.url %><br/>
+  	<% end %>
+  	<%= f.label :image, "Attach an image" %><br />
+  	<%= f.file_field :image %>
+  </p>
+  <p>
+    <%= f.submit 'Submit' %>
+    <%= button_tag "Reset Changes", type: :reset %>
+  </p>
+<% end %>
+</div>
+

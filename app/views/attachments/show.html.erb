@@ -1,0 +1,23 @@
+<h1>Attachment: <%= @attachment.title %></h1>
+<div>
+	<p class="attachment_about">About: <%= @attachment.about %></p>
+	<% if @attachment.image.exists? %>
+  	<%= image_tag @attachment.image.url%><br/>
+  	<% end %>
+
+  	<% if !@attachment.url.empty? %>
+  	<iframe src= "<%=@attachment.url%>?color=009933&byline=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+  	<% end %>
+	<p>Posted <%= time_ago_in_words(@attachment.created_at) %><%=" ago"%>
+	<br>
+	Updated <%= time_ago_in_words(@attachment.updated_at) %><%=" ago"%>
+	</p>
+	<%= link_to "Edit", edit_gallery_attachment_path(@gallery, @attachment)%>
+	<%= link_to "Delete", gallery_attachment_path(@gallery, @attachment), method: :delete, data: {confirm: "Are you sure you want to delete the attachment \"#{@attachment.title}?\""} %>	
+	<br>
+</div>
+<br>
+
+<%= link_to "Back to Gallery", gallery_path(@gallery) %>
+<br>
+<%= link_to "<< Back to homepage of galleries", galleries_path %>

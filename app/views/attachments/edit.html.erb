@@ -1,0 +1,9 @@
+<h1>Edit <% if !@attachment.title.empty?%>
+"<%=@attachment.title%>"
+<%end%>
+Attachment
+</h1>
+<%= render partial: 'attachments/form' %>
+<%= link_to "Delete", gallery_attachment_path(@gallery, @attachment), method: :delete, data: {confirm: "Are you sure you want to delete the attachment \"#{@attachment.title}?\""} %>
+<br>
+<%= link_to "<< Back to gallery", gallery_path(@gallery) %>

@@ -1,7 +1,42 @@
 <h1>Gallery Title: <%= @gallery.title %></h1>
-<p>Gallery Body: <%= @gallery.body %></p>
-<%= link_to "Edit", edit_gallery_path(@gallery) %>
+<p>Gallery Body (description of what this gallery is about, the theme, etc): <%= @gallery.body %></p>
+<h3>Attachments(below will be a collection all of the images)</h3>
+<%= render 'galleries/attachment', collection: @gallery.attachments %>
+
+<h3>Add an attachment to this gallery below</h3>
+<form id= "attachment_radio_buttons">
+<input type="radio" name="attachment_type" value="image">Image
+<input type="radio" name="attachment_type" value="video">Video</form>
+<%= render partial: 'attachments/form' %>
 <br>
-<%= link_to "Delete", gallery_path(@gallery), method: :delete, data: {confirm: "Are you sure you want to delete the gallery \"#{@gallery.title}?\""} %>
+
+<%= link_to "Edit Gallery Info", edit_gallery_path(@gallery) %>
+<br>
+<%= link_to "Delete Gallery", gallery_path(@gallery), method: :delete, data: {confirm: "Are you sure you want to delete the gallery \"#{@gallery.title}?\""} %>
 <br>
 <%= link_to "<< Back to homepage of galleries", galleries_path %>
+
+<script>
+  $( document ).ready(function() {  
+  	$('.attachment_form').hide();
+    });
+
+  $('input:radio[name=attachment_type]').click(function() {
+    var value = $(this).val();
+    $('.attachment_form').show();
+    switch (value) { 
+    case 'image': 
+        $('.image-upload').show();
+        $('.video-upload').hide();
+
+        break;
+    case 'video':
+      $('.video-upload').show();
+      $('.image-upload').hide();
+
+        break;
+    	}
+	});
+
+
+</script>

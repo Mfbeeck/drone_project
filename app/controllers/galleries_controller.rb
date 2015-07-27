@@ -1,10 +1,14 @@
 class GalleriesController < ApplicationController
+	before_action :require_user, only: [:edit, :new, :create, :update, :destroy]
+
 	include GalleriesHelper
 	def index
 		@galleries = Gallery.all
 	end
 	def show
 		@gallery = Gallery.find(params[:id])
+		@attachment = Attachment.new
+		@attachment.gallery_id = @gallery.id
 
 	end
 	def edit
