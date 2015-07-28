@@ -1,18 +1,19 @@
 <h1>Attachment: <%= @attachment.title %></h1>
 <div>
 	<% if !@attachment.about.empty? %>
-	<p class="attachment_about">About: <%= @attachment.about %></p>
+		<p class="attachment_about">About: <%= @attachment.about %></p>
 	<%end%>
 	<% if @attachment.image.exists? %>
-  	<%= image_tag @attachment.image.url%><br/>
+  		<%= image_tag @attachment.image.url(:large)%><br/>
   	<% end %>
 
   	<% if !@attachment.url.empty? %>
-  	<iframe src= "<%=@attachment.url%>?color=009933&byline=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-  	<% end %>
-	<p>Posted <%= time_ago_in_words(@attachment.created_at) %><%=" ago"%>
-	<br>
-	Updated <%= time_ago_in_words(@attachment.updated_at) %><%=" ago"%>
+  		<iframe src= "<%=@attachment.url%>?color=009933&byline=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+	<% end %>
+	<p>
+		Posted <%= time_ago_in_words(@attachment.created_at) %><%=" ago"%>
+		<br>
+		Updated <%= time_ago_in_words(@attachment.updated_at) %><%=" ago"%>
 	</p>
 	<% if current_user %>
 	<div class = "attachment_control_links">
