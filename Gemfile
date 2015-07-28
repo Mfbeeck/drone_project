@@ -7,6 +7,8 @@ gem 'rails', '4.2.3'
 # gem 'sqlite3'
 gem 'better_errors'
 gem 'pg'
+gem 'rails_12factor'
+
 gem 'paperclip'
 gem 'sorcery'
 gem 'bcrypt'
