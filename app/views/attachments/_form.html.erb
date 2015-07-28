@@ -18,7 +18,7 @@
   </p>
   <p class="image-upload">
   	<% if @attachment.image.exists? %>
-  	<%= image_tag @attachment.image.url %><br/>
+  	<%= image_tag @attachment.image.url(:medium) %><br/>
   	<% end %>
   	<%= f.label :image, "Attach an image" %><br />
   	<%= f.file_field :image %>

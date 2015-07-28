@@ -9,7 +9,7 @@
 	</p>
 	<%end%>
 	<% if attachment.image.exists? %>
-		<%= image_tag attachment.image.url%><br/>
+		<%= image_tag attachment.image.url(:large)%><br/>
 	<% end %>
 
 	<% if !attachment.url.empty? %>

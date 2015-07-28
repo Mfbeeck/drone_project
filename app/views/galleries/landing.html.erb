@@ -57,12 +57,20 @@
       color: white;
     }
 
+    .title:hover {
+      color:white;
+    }
+
     .header h4 {
       line-height: 100px; 
       text-transform: uppercase;
       color: #fff;
       margin-top: 0;
       margin-bottom: 80px;
+    }
+
+    #pov {
+      color: white;
     }
 
     .title {
@@ -107,7 +115,7 @@
   <div class="header">
     <div class="container">
     <h4>Welcome to</h4>
-    <h1><span class="title"><%= link_to "Point Of View", galleries_path %></span></h1>
+    <h1><span id="title"><%= link_to "Point Of View", galleries_path, :id => "pov" %></span></h1>
       <p></p>
     </div>
   </div>
