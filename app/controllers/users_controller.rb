@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 	before_action :require_user, only: [:index]
-	before_action :require_admin, only: [:new, :show, :edit, :update, :create, :destroy]
+	before_action :require_admin, only: [:show, :edit, :update, :destroy]
 
 	def new
 		@user = User.new
