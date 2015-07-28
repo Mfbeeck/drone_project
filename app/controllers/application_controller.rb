@@ -9,16 +9,18 @@ class ApplicationController < ActionController::Base
   end
 
   def require_user 
-  	redirect_to '/login' unless current_user 
-	flash.notice = "You are not a user. You must login to access this feature."
-
+    if !current_user
+  	  redirect_to '/login'
+      flash.notice = "You are not a user. You must login to access this feature."
+    else
+    end
   end
 
   def require_admin
-	redirect_to '/login' unless current_user.admin
-	flash.notice = "You are not the admin. Stay out!"
-
+      if current_user.nil? || !current_user.admin
+        redirect_to '/login'
+        flash.notice = "You are not the admin. Please login."
+      else
+      end
   end
-
-
 end

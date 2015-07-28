@@ -1,13 +1,11 @@
 <div class= "user_form">
 <%= form_for(@user) do |f| %>
-  <ul>
-    <% @user.errors.full_messages.each do |error| %>
-    <li><%= error %></li>
-    <% end %>
-  </ul>
   <p>
     <%= f.label :first_name %><br />
     <%= f.text_field :first_name %>
+    <% if !flash.empty?%>
+    <%= flash.notice["first_name"]%>
+    <%end%>
   </p>
   <p>
     <%= f.label :last_name %><br />

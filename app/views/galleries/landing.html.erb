@@ -47,6 +47,16 @@
       margin-bottom: 80px;
     }
 
+    a {
+      color: white;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: none;
+      color: white;
+    }
+
     .header h4 {
       line-height: 100px; 
       text-transform: uppercase;
@@ -97,19 +107,19 @@
   <div class="header">
     <div class="container">
     <h4>Welcome to</h4>
-    <h1><span class="title">Point Of View</span></h1>
+    <h1><span class="title"><%= link_to "Point Of View", galleries_path %></span></h1>
       <p></p>
     </div>
   </div>
 
-  <div class="main">
+ <!--  <div class="main">
     <div class="container">
       <p>Enter to see my Aerial Portfolio</p>
       <br>
       <br>
-      <%= link_to "Enter Here", galleries_path %>
+      <%#= link_to "Enter Here", galleries_path %>
     </div>
   </div>
-
+ -->
 </body>
 </html>

@@ -11,5 +11,6 @@
 </ul>
 
 
-
+<% if current_user %>
 <%= link_to "Create a New Gallery", new_gallery_path, class: "new_gallery_link" %>
+<%end%>

@@ -27,20 +27,18 @@ class UsersController < ApplicationController
 
 	def create 
 		@user = User.new(user_params) 
-		if !current_user.admin
 			if @user.save 
+				if !current_user.admin
+
 				session[:user_id] = @user.id 
 				redirect_to '/galleries' 
-			else 
-				redirect_to '/signup' 
-			end 
-		else
-			if @user.save 
+				else 
 				redirect_to '/users' 
-			else 
-				redirect_to '/signup' 
+				end 
+			else			
+				flash.notice = @user.errors.messages
+				redirect_to :back
 			end 
-		end
 	end
 
 	def destroy

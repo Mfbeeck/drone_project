@@ -1,5 +1,5 @@
 class AttachmentsController < ApplicationController
-	before_action :require_user, only: [:show, :edit, :create, :update, :destroy]
+	before_action :require_user, only: [:edit, :create, :update, :destroy]
 
 	include AttachmentsHelper
 

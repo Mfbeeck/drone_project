@@ -16,15 +16,12 @@
 <br>
 <% if current_user%>
 <div class = "loggedin_div">
-	<% if current_user %> 
 	<%= current_user.email %>
 	<%= link_to "Log out", logout_path, method: "delete" %> 
-	<% else %> 
-	<div class = "login_links">
-		<%= link_to "Login", 'login' %></a></li> 
-		<%= link_to "Signup", 'signup' %></a></li> 
-	</ul> 
-	<% end %>
+<% else %> 
+	<!-- The code below would be applicable if you wanted to show the login/signup links when logged out, but for this site I do not want to-->
+	<%#= link_to "Login", 'login' %> 
+	<%#= link_to "Signup", 'signup' %>
 </div>
 <%end%>
 
