@@ -1,4 +1,4 @@
-class GalleriesController < ApplicationController
+rRpclass GalleriesController < ApplicationController
 	before_action :require_user, only: [:edit, :new, :create, :update, :destroy]
 
 	include GalleriesHelper
