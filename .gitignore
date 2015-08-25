@@ -18,4 +18,4 @@
 
 .env
 
-config/application.yml
+config/aws.yml
